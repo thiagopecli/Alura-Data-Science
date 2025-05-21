@@ -33,9 +33,16 @@ plt.title("Histograma das Notas")
 plt.show()
 
 # Exibir boxplot das notas:
-notas.boxplot(column="nota", color="blue", vert=False)
+notas.boxplot(column="nota", color="red", vert=True)
 plt.xlabel("Nota")
 plt.title("Boxplot das Notas")
+plt.show()
+
+# Desenhar histograma com Seaborn usando displot:
+sns.displot(notas["nota"], bins=10, kde=True, color="red", alpha=0.7)
+plt.xlabel("Nota")
+plt.ylabel("Frequência")
+plt.title("Histograma das Notas com Seaborn")
 plt.show()
 
 print(notas)
