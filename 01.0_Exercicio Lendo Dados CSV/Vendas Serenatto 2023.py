@@ -30,6 +30,7 @@ import matplotlib.pyplot as plt
 
 metodos_pagamento = vendas["metodo_pagamento"].value_counts()
 metodos_pagamento.plot(kind="bar", title="Métodos de Pagamento")
+plt.title("Comparação dos métodos de pagamento do 2º semestre da Serenatto")
 plt.xlabel("Métodos de Pagamento")
 plt.ylabel("Quantidade de Vendas")
 plt.show()
