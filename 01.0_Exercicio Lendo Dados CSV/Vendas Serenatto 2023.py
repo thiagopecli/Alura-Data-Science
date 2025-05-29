@@ -24,3 +24,12 @@ print(vendas_filtradas)
 produtos = ["Café au lait", "Espresso", "Cappuccino"]
 vendas_produtos = vendas.query('produto in @produtos and metodo_pagamento == "PIX"')
 print(vendas_produtos)
+
+# Comparar a quantidade de vendas realizadas por cada método de pagamento:
+import matplotlib.pyplot as plt
+
+metodos_pagamento = vendas["metodo_pagamento"].value_counts()
+metodos_pagamento.plot(kind="bar", title="Métodos de Pagamento")
+plt.xlabel("Métodos de Pagamento")
+plt.ylabel("Quantidade de Vendas")
+plt.show()
