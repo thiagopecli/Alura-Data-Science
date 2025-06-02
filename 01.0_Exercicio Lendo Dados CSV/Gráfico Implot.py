@@ -12,7 +12,16 @@ linguas = ["fr", "es", "de"]
 # Mantendo dados com valores de receita e orçamento válidos, e nas linguas desejadas:
 fr_es_de_com_revenue_e_budget = dados.query("revenue > 0 and budget > 0 and original_language in @linguas")
 
-# Construindo o gráfico de dispersão mais a reta de regressão linear para cada caso:
-sns.lmplot(x='budget', y='revenue', data=fr_es_de_com_revenue_e_budget, hue= 'original_language', height=10, aspect=1.5)
+# Construindo o gráfico de dispersão com subplots para cada idioma:
+sns.lmplot(
+    data=fr_es_de_com_revenue_e_budget,
+    x="budget",
+    y="revenue",
+    col="original_language",      # Cria um gráfico para cada idioma
+    hue="original_language",      # Cores diferentes para cada idioma
+    ci=None,                      # Remove intervalo de confiança
+    height=4,                     # Altura de cada subplot
+    scatter_kws={"s": 30, "alpha": 0.5}  # Tamanho e transparência dos pontos
+)
 plt.show()
 
