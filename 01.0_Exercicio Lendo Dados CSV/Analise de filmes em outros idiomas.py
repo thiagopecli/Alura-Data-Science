@@ -19,7 +19,7 @@ sns.barplot(
     x='lingua',
     y='porcentagem',
     hue='lingua',
-    palette='viridis',
+    palette='mako',
     legend=False
 )
 plt.title('Porcentagem de Filmes por Língua (Excluindo Inglês)')
