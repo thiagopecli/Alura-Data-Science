@@ -15,4 +15,14 @@ media_por_filme_jumanji = notas.loc[notas["movieId"] == 2, "rating"]
 media_por_filme_toy_story = media_por_filme_toy_story.mean()
 media_por_filme_jumanji = media_por_filme_jumanji.mean()
 
-print(media_por_filme_toy_story, media_por_filme_jumanji)
+print(media_por_filme_toy_story, media_por_filme_jumanji) 
+
+# Criar o grafico:
+import matplotlib.pyplot as plt
+
+plt.boxplot([notas.loc[notas["movieId"] == 1, "rating"],
+             notas.loc[notas["movieId"] == 2, "rating"]])
+plt.xticks([1, 2], ["Toy Story", "Jumanji"])
+plt.ylabel("Avaliação")
+plt.title("Avaliação dos filmes")
+plt.show()
