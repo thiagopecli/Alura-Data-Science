@@ -3,7 +3,7 @@ import numpy as np
 
 # Criando o Data Frame de exemplo:
 
-dados = np.array([[ 10, 120, 90, 110, 130], [80, 150, 70, 140, 60]])
+dados = np.array([[ 100, 120, 90, 110, 130], [80, 150, 70, 140, 60]])
 df = pd.DataFrame(dados, index = ["Semana 1", "Semana 2"],
                   columns = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta"])
 
