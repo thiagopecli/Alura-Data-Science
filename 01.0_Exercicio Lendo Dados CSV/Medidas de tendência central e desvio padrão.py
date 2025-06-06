@@ -35,7 +35,7 @@ for patch, cor in zip(box['boxes'], cores):
 plt.xticks([1, 2], ["Toy Story", "Jumanji"])
 plt.ylabel("Avaliação")
 plt.title("Avaliação dos filmes")
-plt.show()
+# plt.show()
 
 # Criar boxplot com dados dos filmes id 1 ao 5:
 filmes_ids = [1, 2, 3, 4, 5]
@@ -44,8 +44,19 @@ box = plt.boxplot(dados_filmes, patch_artist=True)
 cores = ['lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightgray']
 for patch, cor in zip(box['boxes'], cores):
     patch.set_facecolor(cor)
-    
+
 plt.xticks(range(1, len(filmes_ids) + 1), [f"Filme {id}" for id in filmes_ids])
 plt.ylabel("Avaliação")
 plt.title("Avaliação dos filmes 1 a 5")
-plt.show()
+# plt.show()
+
+# Contar quantas vezes cada filme aparece:
+filmes_counts = notas.groupby("movieId").count()
+print(filmes_counts)
+
+# mostra os últimos filmes dessa contagem.
+print(filmes_counts.tail())
+
+# mostrar todos os filmess que tem apenas uma avaliação:
+filmes_uma_avaliacao = filmes_counts[filmes_counts["rating"] == 1]
+print(filmes_uma_avaliacao)
