@@ -20,8 +20,18 @@ print(media_por_filme_toy_story, media_por_filme_jumanji)
 # Criar o grafico:
 import matplotlib.pyplot as plt
 
-plt.boxplot([notas.loc[notas["movieId"] == 1, "rating"],
-             notas.loc[notas["movieId"] == 2, "rating"]])
+# Dados das avaliações
+toy_story = notas.loc[notas["movieId"] == 1, "rating"]
+jumanji = notas.loc[notas["movieId"] == 2, "rating"]
+
+# Criar o boxplot com patch_artist=True
+box = plt.boxplot([toy_story, jumanji], patch_artist=True)
+
+# Definir cores para cada boxplot
+cores = ['lightblue', 'lightgreen']
+for patch, cor in zip(box['boxes'], cores):
+    patch.set_facecolor(cor)
+
 plt.xticks([1, 2], ["Toy Story", "Jumanji"])
 plt.ylabel("Avaliação")
 plt.title("Avaliação dos filmes")
