@@ -13,5 +13,13 @@ notas_do_jumanji = notas.query('movieId == 2')
 
 media_do_toy_story = notas_do_toy_story["rating"].mean()
 media_do_jumanji = notas_do_jumanji["rating"].mean()
-
 print(media_do_toy_story, media_do_jumanji)
+
+# Exibindo a mediana: 
+
+notas_do_toy_story = notas.query('movieId == 1')
+notas_do_jumanji = notas.query('movieId == 2')
+
+mediana_do_toy_story = notas_do_toy_story['rating'].median()
+mediana_do_jumanji = notas_do_jumanji['rating'].median()
+print(mediana_do_toy_story, mediana_do_jumanji)
