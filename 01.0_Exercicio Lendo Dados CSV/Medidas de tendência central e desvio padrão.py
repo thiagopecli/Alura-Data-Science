@@ -36,3 +36,16 @@ plt.xticks([1, 2], ["Toy Story", "Jumanji"])
 plt.ylabel("Avaliação")
 plt.title("Avaliação dos filmes")
 plt.show()
+
+# Criar boxplot com dados dos filmes id 1 ao 5:
+filmes_ids = [1, 2, 3, 4, 5]
+dados_filmes = [notas.loc[notas["movieId"] == filme_id, "rating"] for filme_id in filmes_ids]
+box = plt.boxplot(dados_filmes, patch_artist=True)
+cores = ['lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightgray']
+for patch, cor in zip(box['boxes'], cores):
+    patch.set_facecolor(cor)
+    
+plt.xticks(range(1, len(filmes_ids) + 1), [f"Filme {id}" for id in filmes_ids])
+plt.ylabel("Avaliação")
+plt.title("Avaliação dos filmes 1 a 5")
+plt.show()
