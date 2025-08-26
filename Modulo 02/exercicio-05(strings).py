@@ -25,3 +25,7 @@ print(texto)
 texto_formatado_corrigido = texto.strip().replace('diass', 'dias').replace('y', 't').title() # Formata/corrige em uma nova variável: Remove os espaços, corrige os erros, põe as primeiras letras de cada palavra em maiuscula;
 print(texto_formatado_corrigido)
 
+# Exercicio: Padrão [Unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters#:~:text=U%2B0040-,%40,-64)
+
+teste = chr(79) + chr(108) + chr(225)
+print(teste)
