@@ -1,4 +1,4 @@
-# Calculos com Exponenciação, módulo e divissão inteira:
+# Calculos com Exponenciação, módulo e divisão inteira:
 
 # Exponenciação(**):
 num = 2**3
